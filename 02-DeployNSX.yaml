@@ -288,7 +288,7 @@
         Content-Type: "application/xml"
       force_basic_auth: yes
       status_code: 204
-      body: "{{ lookup('template', 'templates/edge_routerID.j2') }}"
+      body: "{{ lookup('template', '{{ playbook_dir }}/templates/edge_routerID.j2') }}"
       validate_certs: no
     with_items: "{{ edges.json.edgePage.data }}"
     when:
@@ -307,7 +307,7 @@
         Content-Type: "application/xml"
       force_basic_auth: yes
       status_code: 204
-      body: "{{ lookup('template', 'templates/edge_BGP.j2') }}"
+      body: "{{ lookup('template', '{{ playbook_dir }}/templates/edge_BGP.j2') }}"
       validate_certs: no
     with_items: "{{ edges.json.edgePage.data }}"
     when:
@@ -326,7 +326,7 @@
         Content-Type: "application/xml"
       force_basic_auth: yes
       status_code: 204
-      body: "{{ lookup('template', 'templates/dlr_routerID.j2') }}"
+      body: "{{ lookup('template', '{{ playbook_dir }}/templates/dlr_routerID.j2') }}"
       validate_certs: no
     with_items: "{{ edges.json.edgePage.data }}"
     when:
@@ -345,7 +345,7 @@
         Content-Type: "application/xml"
       force_basic_auth: yes
       status_code: 204
-      body: "{{ lookup('template', 'templates/dlr_BGP.j2') }}"
+      body: "{{ lookup('template', '{{ playbook_dir }}/templates/dlr_BGP.j2') }}"
       validate_certs: no
     with_items: "{{ edges.json.edgePage.data }}"
     when:
